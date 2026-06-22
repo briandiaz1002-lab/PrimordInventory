@@ -5009,11 +5009,10 @@ async function loadAllData() {
     } catch(e) { /* store aún no existe en upgrade v3→v4 — ignorar, se usará el default */ }
     await migrateMultiItemMovements();
     if (!currentRole||currentRole==='admin') await loadDashboard();
-    // F4: construir índice de alertas al cargar (necesita productos en cache)
+    // Reconstruir índice de productos al cargar; las alertas de precio fueron retiradas.
     const prods = await getAllRecords('products');
     allProductsCache = prods;
     buildProductsIndex();
-    await buildPriceAlertsIndex();
     refreshFinancesBadgeFromIndex();
 }
 function updateCurrentDate() { document.getElementById('currentDate').textContent=new Date().toLocaleDateString('es-ES',{weekday:'short',day:'numeric',month:'short',year:'numeric'}); }
