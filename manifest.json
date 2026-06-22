@@ -1,6 +1,6 @@
 {
-  "name": "TallerMotos Inventario",
-  "short_name": "TallerMotos",
+  "name": "PrimordInventory",
+  "short_name": "PrimordInv",
   "description": "Sistema de gestión de inventario para Taller de Motos — funciona sin conexión a internet.",
   "start_url": "./index.html",
   "scope": "./",
